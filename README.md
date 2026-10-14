@@ -3,18 +3,6 @@
 This repository contains the custom code used to process, integrate and cluster the single-nucleus RNA-seq (snRNA-seq) data from 
 the PTCL atlas. It also includes the down-sampling stability procedure used to choose the clustering resolution for each cell lineage.
 
-## Contents
-
-| Folder | Script | What it does | Manuscript section |
-|---|---|---|---|
-| `snRNA-seq_initial_clustering/` | `run_prepare.py` | Loads one sample's CellBender-filtered count matrix, keeps cells that passed DoubletFinder, and prefixes barcodes with the sample ID | Methods: *Preprocessing, integration, and clustering* |
-| | `run_scanorama.py` | Normalises, selects genes highly variable in ≥10 samples, and integrates samples with Scanorama (`dimred = 50`) | Supplementary Methods: *Integration, batch effect removal and clustering* |
-| | `run_clustering.py` | Builds the neighbour graph (30 Scanorama dimensions, 50 neighbours), UMAP, and Leiden clustering at 16 resolutions (0.05–1.5), with silhouette scores | Same |
-| `snRNA-seq_subclustering/` | `SubClustering.py` | Re-integrates and re-clusters one lineage on the full data or on a random 90% down-sample | Supplementary Methods: stability-based sub-clustering |
-| | `JaccardSimilarity.R` | Compares each down-sampled clustering with the full-data clustering (maximal Jaccard index) and computes the weighted stability score *S_R* across resolutions | Same (equations for *J* and *S_R*) |
-| `Cell-cell_interaction/` | `ntbk_plot_heatmap.ipynb` | Summarises and plots CellPhoneDB (v3, statistical mode) ligand–receptor results for TFHL and PTCL, NOS versus normal tissue | Methods: *TME ecosystem and cell-cell interaction analysis* |
-| `demo/` | `make_demo_data.py` | Generates a small **simulated** dataset (no patient data) to test the pipeline | — |
-
 ## System requirements
 
 **Operating systems.**
