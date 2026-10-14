@@ -15,22 +15,19 @@ It has 12 samples × 300 nuclei × 3,000 genes, five cell types with distinct ma
 At least 10 samples are needed because the pipeline keeps genes that are highly variable in ≥10 samples.
 
 ```bash
-mkdir demo_run && cd demo_run && mkdir output
-export MPLBACKEND=Agg   # run plots without a display
-
 # 1. Simulate data (writes raw_cellbender_DF_cat.h5ad, raw_data.h5ad, random_select.pkl)
-python ../demo/make_demo_data.py
+python ./demo/make_demo_data.py
 
 # 2. Integration and initial clustering
-python ../snRNA-seq_initial_clustering/run_scanorama.py     # -> integrated.h5ad
-python ../snRNA-seq_initial_clustering/run_clustering.py    # -> integrated_processed.h5ad
+python ./snRNA-seq_initial_clustering/run_scanorama.py     # -> integrated.h5ad
+python ./snRNA-seq_initial_clustering/run_clustering.py    # -> integrated_processed.h5ad
 
 # 3. Stability analysis for the sub-clustering resolution
-python ../snRNA-seq_subclustering/SubClustering.py 1.0 1    # reference clustering on all cells
+python ./snRNA-seq_subclustering/SubClustering.py 1.0 1    # reference clustering on all cells
 for i in $(seq 1 10); do
-    python ../snRNA-seq_subclustering/SubClustering.py 0.9 $i   # ten 90% down-samples
+    python ./snRNA-seq_subclustering/SubClustering.py 0.9 $i   # ten 90% down-samples
 done
-Rscript ../snRNA-seq_subclustering/JaccardSimilarity.R      # -> plot_jaccard.pdf, plot_perc.pdf
+Rscript ./snRNA-seq_subclustering/JaccardSimilarity.R      # -> plot_jaccard.pdf, plot_perc.pdf
 ```
 
 **Expected output**
