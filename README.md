@@ -1,13 +1,7 @@
 # PTCL_atlas
 
-Code accompanying:
-
-> Lin WW, Wang A, Reynier JB, *et al.* **Tumor-Intrinsic States and Microenvironment Ecosystems Identify Therapeutic Vulnerabilities in Peripheral T-Cell Lymphomas.** *Nature Communications* (under review).
-
 This repository contains the custom code used to process, integrate and cluster the single-nucleus RNA-seq (snRNA-seq) data from 
-T-follicular helper lymphoma (TFHL) and PTCL, not-otherwise-specified (PTCL, NOS) biopsies. It also includes the down-sampling 
-stability procedure used to choose the clustering resolution for each cell lineage, and the plotting of cell–cell interaction results.
-The methods are described in the **Methods** section of the manuscript and, with full parameters and equations, in the **Supplementary Methods**.
+the PTCL atlas. It also includes the down-sampling stability procedure used to choose the clustering resolution for each cell lineage.
 
 ## Contents
 
