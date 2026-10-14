@@ -80,8 +80,8 @@ This code is released under the MIT License (see `LICENSE`).
 
 ## Contact
 
-Teresa Palomero (tp2151@cumc.columbia.edu) · Raul Rabadan (rr2579@cumc.columbia.edu)
-For questions about the code, please open an issue on this repository.
+Teresa Palomero (tp2151@cumc.columbia.edu)
+Raul Rabadan (rr2579@cumc.columbia.edu)
 
 ## Versions of tools and packages
 
